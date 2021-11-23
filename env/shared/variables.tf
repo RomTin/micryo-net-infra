@@ -5,4 +5,5 @@ locals {
   athena_id          = "logs_micryo_net"
   athena_bucket_name = "athena-data-bucket-micryo-net"
   log_bucket_name    = "log-bucket-micryo-net"
+  cd_role_name       = "codebuild-cd-role-micryo-net"
 }
