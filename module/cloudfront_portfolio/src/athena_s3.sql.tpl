@@ -1,4 +1,4 @@
-CREATE EXTERNAL TABLE ${database}.dev_s3_logs(
+CREATE EXTERNAL TABLE ${database}.${env}_s3_logs(
   `bucketowner` STRING,
   `bucket_name` STRING,
   `requestdatetime` STRING,

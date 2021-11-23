@@ -1,4 +1,4 @@
-CREATE EXTERNAL TABLE IF NOT EXISTS ${database}.dev_cloudfront_logs (
+CREATE EXTERNAL TABLE IF NOT EXISTS ${database}.${env}_cloudfront_logs (
   `date` DATE,
   time STRING,
   location STRING,

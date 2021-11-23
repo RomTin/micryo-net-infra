@@ -5,6 +5,7 @@ resource "aws_athena_named_query" "cloudfront" {
   database  = var.athena_id
   workgroup = var.athena_id
   query = templatefile("${path.module}/src/athena_cloudfront.sql.tpl", {
+    env         = var.env
     database    = var.athena_id
     bucket_name = var.log_bucket_name
     prefix      = "${local.name}_cloudfront/"
@@ -16,6 +17,7 @@ resource "aws_athena_named_query" "s3" {
   database  = var.athena_id
   workgroup = var.athena_id
   query = templatefile("${path.module}/src/athena_s3.sql.tpl", {
+    env         = var.env
     database    = var.athena_id
     bucket_name = var.log_bucket_name
     prefix      = "${local.name}_s3/"
