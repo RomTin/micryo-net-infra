@@ -7,6 +7,10 @@ terraform {
       source  = "hashicorp/aws"
       version = "~> 3.66"
     }
+    github = {
+      source  = "integrations/github"
+      version = "~> 4.0"
+    }
   }
 }
 
@@ -35,6 +39,11 @@ provider "aws" {
       Repository         = "micryo-net-infra"
     }
   }
+}
+
+provider "github" {
+  token = var.GITHUB_TOKEN
+  owner = "RomTin"
 }
 
 variable "AWS_ACCESS_KEY_ID" {
