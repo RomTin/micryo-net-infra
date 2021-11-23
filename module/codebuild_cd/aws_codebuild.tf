@@ -36,6 +36,9 @@ resource "aws_codebuild_project" "cd" {
     location            = var.repository_url
     report_build_status = true
     buildspec           = var.buildspec_path
+    git_submodules_config {
+      fetch_submodules = false
+    }
   }
 
   tags = {
