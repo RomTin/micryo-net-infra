@@ -4,7 +4,7 @@ module "cd" {
   source                = "../../module/codebuild_cd"
   env                   = local.env
   compute_type          = "BUILD_GENERAL1_SMALL"
-  repository_name       = "micryo-net-blog"
+  repository_name       = "RomTin/micryo-net-blog"
   repository_url        = "https://github.com/RomTin/micryo-net-blog"
   buildspec_path        = "buildspec.dev.yml"
   role_arn              = data.aws_iam_role.cd_role.arn
