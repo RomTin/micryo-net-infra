@@ -16,4 +16,5 @@ module "cd" {
     { type = "EVENT", pattern = "PUSH", exclude_matched_pattern = false },
     { type = "HEAD_REF", pattern = "refs/heads/main", exclude_matched_pattern = false }
   ]
+  github_pat = var.GITHUB_TOKEN
 }

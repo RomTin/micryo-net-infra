@@ -51,3 +51,8 @@ variable "webhook_filter_group" {
   }))
   description = "CodeBuildのwebhookをトリガーするためのフィルタグループ"
 }
+
+variable "github_pat" {
+  type        = string
+  description = "GitHubのパーソナルアクセストークン"
+}
