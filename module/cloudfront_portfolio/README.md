@@ -25,6 +25,7 @@ No modules.
 | [aws_athena_named_query.cloudfront](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/athena_named_query) | resource |
 | [aws_athena_named_query.s3](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/athena_named_query) | resource |
 | [aws_cloudfront_distribution.portfolio](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudfront_distribution) | resource |
+| [aws_cloudfront_function.auth](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudfront_function) | resource |
 | [aws_cloudfront_origin_access_identity.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudfront_origin_access_identity) | resource |
 | [aws_route53_record.portfolio](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route53_record) | resource |
 | [aws_route53_record.portfolio_acm](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route53_record) | resource |
@@ -36,6 +37,7 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_athena_id"></a> [athena\_id](#input\_athena\_id) | Athenaのデータベース/ワークグループのID | `string` | n/a | yes |
+| <a name="input_basic_auth_password"></a> [basic\_auth\_password](#input\_basic\_auth\_password) | ベーシック認証に使用するパスワード, 空文字列の場合ベーシック認証を無効化する | `string` | n/a | yes |
 | <a name="input_env"></a> [env](#input\_env) | 環境識別子 | `string` | n/a | yes |
 | <a name="input_log_bucket_domain_name"></a> [log\_bucket\_domain\_name](#input\_log\_bucket\_domain\_name) | ログ保管先S3バケットのドメイン名 | `string` | n/a | yes |
 | <a name="input_log_bucket_id"></a> [log\_bucket\_id](#input\_log\_bucket\_id) | ログ保管先S3バケットのID | `string` | n/a | yes |
