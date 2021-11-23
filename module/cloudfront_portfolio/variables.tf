@@ -29,7 +29,17 @@ variable "log_bucket_domain_name" {
   description = "ログ保管先S3バケットのドメイン名"
 }
 
+variable "log_bucket_name" {
+  type        = string
+  description = "ログ保管先S3バケットの名前"
+}
+
 variable "log_bucket_id" {
   type        = string
   description = "ログ保管先S3バケットのID"
+}
+
+variable "athena_id" {
+  type        = string
+  description = "Athenaのデータベース/ワークグループのID"
 }
