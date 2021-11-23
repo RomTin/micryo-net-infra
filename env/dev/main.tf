@@ -37,6 +37,12 @@ provider "aws" {
   }
 }
 
+provider "github" {
+  token    = var.GITHUB_TOKEN
+  base_url = "https://github.com/"
+  owner    = "RomTin"
+}
+
 variable "AWS_ACCESS_KEY_ID" {
   type        = string
   description = "Terraform実行用IAMユーザーのアクセスキーID"
