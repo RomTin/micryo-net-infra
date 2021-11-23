@@ -48,7 +48,7 @@ resource "aws_cloudfront_distribution" "portfolio" {
       for_each = length(var.basic_auth_password) > 0 ? [0] : []
       content {
         event_type   = "viewer-request"
-        function_arn = aws_cloudfront_function.auth.arn
+        function_arn = aws_cloudfront_function.auth[0].arn
       }
     }
 
