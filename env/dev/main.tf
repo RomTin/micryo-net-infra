@@ -38,9 +38,8 @@ provider "aws" {
 }
 
 provider "github" {
-  token    = var.GITHUB_TOKEN
-  base_url = "https://github.com/"
-  owner    = "RomTin"
+  token = var.GITHUB_TOKEN
+  owner = "RomTin"
 }
 
 variable "AWS_ACCESS_KEY_ID" {
