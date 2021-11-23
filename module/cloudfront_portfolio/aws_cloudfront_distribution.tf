@@ -2,7 +2,7 @@
 
 resource "aws_cloudfront_distribution" "portfolio" {
   comment         = local.name
-  aliases         = var.portfolio_domain
+  aliases         = [var.portfolio_domain]
   enabled         = true
   price_class     = "PriceClass_100"
   http_version    = "http2"
