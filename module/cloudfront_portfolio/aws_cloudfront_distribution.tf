@@ -40,6 +40,9 @@ resource "aws_cloudfront_distribution" "portfolio" {
     cached_methods         = ["GET", "HEAD"]
     target_origin_id       = aws_s3_bucket.portfolio.bucket_regional_domain_name
     viewer_protocol_policy = "redirect-to-https"
+    min_ttl                = 3600
+    default_ttl            = 3600
+    max_ttl                = 3600
     forwarded_values {
       query_string = true
       cookies {

@@ -24,6 +24,14 @@ resource "aws_s3_bucket" "portfolio" {
     }]
   })
 
+  cors_rule {
+    allowed_methods = ["GET", "HEAD"]
+    allowed_origins = [var.portfolio_domain]
+    allowed_headers = ["*"]
+    expose_headers  = ["ETag"]
+    max_age_seconds = 3600
+  }
+
   tags = {
     Name = local.name
   }
