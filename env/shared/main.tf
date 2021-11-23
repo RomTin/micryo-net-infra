@@ -53,8 +53,8 @@ variable "AWS_DEFAULT_REGION" {
 }
 
 variable "GITHUB_TOKEN" {
-  type       = string
-  descripton = "GitHub用ｌパーソナルアクセストークン"
+  type        = string
+  description = "GitHub用パーソナルアクセストークン"
 }
 
 variable "NOTIFICATION_EMAIL" {
