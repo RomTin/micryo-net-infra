@@ -13,12 +13,15 @@ resource "aws_s3_bucket" "portfolio" {
   }
 
   policy = jsonencode({
-    Effect = "Allow"
-    Principal = {
-      AWS = aws_cloudfront_origin_access_identity.this.iam_arn
-    }
-    Action   = "s3:GetObject"
-    Resource = "arn:aws:s3:::${local.name}/*"
+    Version = "2012-10-17"
+    Statement = [{
+      Effect = "Allow"
+      Principal = {
+        AWS = aws_cloudfront_origin_access_identity.this.iam_arn
+      }
+      Action   = "s3:GetObject"
+      Resource = "arn:aws:s3:::${local.name}/*"
+    }]
   })
 
   tags = {
