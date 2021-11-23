@@ -15,12 +15,14 @@
 
 | Name | Source | Version |
 |------|--------|---------|
+| <a name="module_cd"></a> [cd](#module\_cd) | ../../module/codebuild_cd | n/a |
 | <a name="module_portfolio"></a> [portfolio](#module\_portfolio) | ../../module/cloudfront_portfolio | n/a |
 
 ## Resources
 
 | Name | Type |
 |------|------|
+| [aws_iam_role.cd_role](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_role) | data source |
 | [aws_route53_zone.root_domain](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/route53_zone) | data source |
 | [aws_s3_bucket.log](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/s3_bucket) | data source |
 
