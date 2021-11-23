@@ -43,6 +43,15 @@ resource "aws_cloudfront_distribution" "portfolio" {
     min_ttl                = 3600
     default_ttl            = 3600
     max_ttl                = 3600
+
+    dynamic "function_association" {
+      for_each = length(var.basic_auth_password) > 0 ? [0] : 0
+      content {
+        event_type   = "viewer-request"
+        function_arn = aws_cloudfront_function.auth.arn
+      }
+    }
+
     forwarded_values {
       query_string = true
       cookies {

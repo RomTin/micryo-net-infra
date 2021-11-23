@@ -10,3 +10,9 @@ variable "env_root_domain" {
   type        = string
   description = "環境で使用するドメイン"
 }
+
+variable "basic_auth_password" {
+  type        = string
+  description = "ベーシック認証に使用するパスワード, 空文字列の場合ベーシック認証を無効化する"
+  default     = ""
+}
