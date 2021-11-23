@@ -9,8 +9,8 @@ module "portfolio" {
   portfolio_domain       = var.env_root_domain
   zone_id                = data.aws_route53_zone.root_domain.zone_id
   ttl                    = 300
-  log_bucket_domain_name = aws_s3_bucket.log.bucket_domain_name
-  log_bucket_name        = aws_s3_bucket.log.bucket
-  log_bucket_id          = aws_s3_bucket.log.id
+  log_bucket_domain_name = data.aws_s3_bucket.log.bucket_domain_name
+  log_bucket_name        = data.aws_s3_bucket.log.bucket
+  log_bucket_id          = data.aws_s3_bucket.log.id
   athena_id              = local.athena_id
 }
