@@ -8,7 +8,7 @@ resource "aws_s3_bucket" "portfolio" {
   }
 
   logging {
-    target_bucket = var.log_bucket_domain_name
+    target_bucket = var.log_bucket_id
     target_prefix = "${local.name}_s3/"
   }
 

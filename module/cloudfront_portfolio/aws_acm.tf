@@ -13,6 +13,7 @@ resource "aws_acm_certificate" "portfolio" {
 }
 
 resource "aws_acm_certificate_validation" "portfolio" {
+  provider                = aws.use1
   certificate_arn         = aws_acm_certificate.portfolio.arn
   validation_record_fqdns = [aws_route53_record.portfolio.fqdn]
 }

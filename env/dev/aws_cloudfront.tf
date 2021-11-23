@@ -10,4 +10,5 @@ module "portfolio" {
   zone_id                = data.aws_route53_zone.root_domain.zone_id
   ttl                    = 300
   log_bucket_domain_name = aws_s3_bucket.log.bucket_domain_name
+  log_bucket_id          = aws_s3_bucket.log.id
 }

@@ -26,5 +26,10 @@ variable "ttl" {
 
 variable "log_bucket_domain_name" {
   type        = string
-  description = "CloudFrontのログ保管先S3バケットのドメイン名"
+  description = "ログ保管先S3バケットのドメイン名"
+}
+
+variable "log_bucket_id" {
+  type        = string
+  description = "ログ保管先S3バケットのID"
 }
