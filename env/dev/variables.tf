@@ -2,7 +2,7 @@
 
 locals {
   env             = "dev"
-  log_bucket_name = "${local.env}-log-bucket"
+  log_bucket_name = "${local.env}-log-bucket-micryo-net"
 }
 
 variable "env_root_domain" {
