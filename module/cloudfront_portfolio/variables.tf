@@ -1,7 +1,8 @@
 # variables.tf
 
 locals {
-  name = "${var.env}-portfolio-micryo-net"
+  name          = "${var.env}-portfolio-micryo-net"
+  function_name = "${var.env}-basic-auth-micryo-net"
 }
 
 variable "env" {
@@ -42,4 +43,9 @@ variable "log_bucket_id" {
 variable "athena_id" {
   type        = string
   description = "Athenaのデータベース/ワークグループのID"
+}
+
+variable "basic_auth_password" {
+  type        = string
+  description = "ベーシック認証に使用するパスワード, 空文字列の場合ベーシック認証を無効化する"
 }

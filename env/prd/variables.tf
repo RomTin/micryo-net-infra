@@ -1,7 +1,7 @@
 # variables.tf
 
 locals {
-  env             = "dev"
+  env             = "prd"
   log_bucket_name = "log-bucket-micryo-net"
   athena_id       = "logs_micryo_net"
 }

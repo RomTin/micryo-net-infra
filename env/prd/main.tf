@@ -16,7 +16,7 @@ provider "aws" {
   secret_key = var.AWS_SECRET_ACCESS_KEY
   default_tags {
     tags = {
-      Env                = "shared"
+      Env                = "prd"
       ManagedByTerraform = true
       Repository         = "micryo-net-infra"
     }
@@ -30,7 +30,7 @@ provider "aws" {
   secret_key = var.AWS_SECRET_ACCESS_KEY
   default_tags {
     tags = {
-      Env                = "shared"
+      Env                = "prd"
       ManagedByTerraform = true
       Repository         = "micryo-net-infra"
     }
