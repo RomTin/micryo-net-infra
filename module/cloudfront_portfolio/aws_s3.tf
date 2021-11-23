@@ -12,6 +12,15 @@ resource "aws_s3_bucket" "portfolio" {
     target_prefix = "${local.name}_s3/"
   }
 
+  policy = jsonencode({
+    Effect = "Allow"
+    Principal = {
+      AWS = aws_cloudfront_origin_access_identity.this.iam_arn
+    }
+    Action   = "s3:GetObject"
+    Resource = "arn:aws:s3:::${local.name}/*"
+  })
+
   tags = {
     Name = local.name
   }
