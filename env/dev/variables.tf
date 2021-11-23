@@ -1,6 +1,8 @@
 # variables.tf
 
 locals {
+  env             = "dev"
+  log_bucket_name = "${local.env}-log-bucket"
 }
 
 variable "env_root_domain" {
