@@ -9,6 +9,7 @@ resource "aws_iam_role" "cd_role" {
       Principal = {
         Service = "codebuild.amazonaws.com"
       }
+      Action = "sts:AssumeRole"
     }]
   })
   tags = {
