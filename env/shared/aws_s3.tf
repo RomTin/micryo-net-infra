@@ -28,6 +28,12 @@ resource "aws_s3_bucket" "log" {
     id          = "c4c1ede66af53448b93c283ce9448c4ba468c9432aa01d700d3878632f77d2d0"
   }
 
+  grant {
+    type        = "Group"
+    permissions = ["READ_ACP", "WRITE"]
+    uri         = "http://acs.amazonaws.com/groups/s3/LogDelivery"
+  }
+
   tags = {
     Name = local.log_bucket_name
   }
