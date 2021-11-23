@@ -2,7 +2,18 @@
 
 resource "aws_s3_bucket" "log" {
   bucket = local.log_bucket_name
-  acl    = "private"
+
+  grant {
+    type        = "CanonicalUser"
+    permissions = ["FULL_CONTROL"]
+    id          = data.aws_canonical_user_id.current.id
+  }
+
+  grant {
+    type        = "CanonicalUser"
+    permissions = ["FULL_CONTROL"]
+    id          = data.aws_cloudfront_canonical_user_id.current.id
+  }
 
   tags = {
     Name = local.log_bucket_name
