@@ -44,6 +44,10 @@ resource "aws_codebuild_project" "cd" {
   tags = {
     Name = local.name
   }
+
+  lifecycle {
+    ignore_changes = [source]
+  }
 }
 
 resource "aws_codebuild_webhook" "webhook" {
