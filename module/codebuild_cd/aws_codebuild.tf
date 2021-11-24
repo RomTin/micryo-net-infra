@@ -36,10 +36,17 @@ resource "aws_codebuild_project" "cd" {
     location            = var.repository_url
     report_build_status = true
     buildspec           = var.buildspec_path
+    git_submodules_config {
+      fetch_submodules = false
+    }
   }
 
   tags = {
     Name = local.name
+  }
+
+  lifecycle {
+    ignore_changes = [source]
   }
 }
 
@@ -56,4 +63,10 @@ resource "aws_codebuild_webhook" "webhook" {
       }
     }
   }
+}
+
+resource "aws_codebuild_source_credential" "cred" {
+  auth_type   = "PERSONAL_ACCESS_TOKEN"
+  server_type = "GITHUB"
+  token       = var.github_pat
 }

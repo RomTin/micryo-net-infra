@@ -8,7 +8,8 @@ module "cd" {
   env                   = local.env
   compute_type          = "BUILD_GENERAL1_SMALL"
   repository_name       = "micryo-net-blog"
-  repository_url        = "https://github.com/RomTin/micryo-net-blog"
+  repository_url        = "https://github.com/RomTin/micryo-net-blog.git"
+
   buildspec_path        = "buildspec.dev.yml"
   role_arn              = data.aws_iam_role.cd_role.arn
   environment_variables = []
@@ -16,4 +17,5 @@ module "cd" {
     { type = "EVENT", pattern = "PUSH", exclude_matched_pattern = false },
     { type = "HEAD_REF", pattern = "refs/heads/develop", exclude_matched_pattern = false }
   ]
+  github_pat = var.GITHUB_TOKEN
 }
