@@ -45,6 +45,11 @@ resource "aws_iam_role_policy" "cd_role_policy" {
         Effect   = "Allow"
         Resource = ["*"]
         Action   = ["ssm:GetParameters"]
+      },
+      {
+        Effect   = "Allow"
+        Resource = ["*"]
+        Action   = ["cloudfront:CreateInvalidation"]
       }
     ]
   })
