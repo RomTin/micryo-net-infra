@@ -48,4 +48,7 @@ No modules.
 
 ## Outputs
 
-No outputs.
+| Name | Description |
+|------|-------------|
+| <a name="output_cloudfront_portfolio"></a> [cloudfront\_portfolio](#output\_cloudfront\_portfolio) | n/a |
+| <a name="output_s3_portfolio"></a> [s3\_portfolio](#output\_s3\_portfolio) | n/a |
