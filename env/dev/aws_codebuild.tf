@@ -9,9 +9,8 @@ module "cd" {
   compute_type    = "BUILD_GENERAL1_SMALL"
   repository_name = "micryo-net-blog"
   repository_url  = "https://github.com/RomTin/micryo-net-blog.git"
-
-  buildspec_path = "buildspec.dev.yml"
-  role_arn       = data.aws_iam_role.cd_role.arn
+  buildspec_path  = "buildspec.yml"
+  role_arn        = data.aws_iam_role.cd_role.arn
   environment_variables = [
     {
       type  = "PLAINTEXT"
