@@ -1,13 +1,14 @@
 # aws_cloudfront_distribution.tf
 
 resource "aws_cloudfront_distribution" "portfolio" {
-  comment         = local.name
-  aliases         = [var.portfolio_domain]
-  enabled         = true
-  price_class     = "PriceClass_100"
-  http_version    = "http2"
-  is_ipv6_enabled = false
-  web_acl_id      = null
+  comment             = local.name
+  aliases             = [var.portfolio_domain]
+  enabled             = true
+  price_class         = "PriceClass_100"
+  http_version        = "http2"
+  is_ipv6_enabled     = false
+  web_acl_id          = null
+  default_root_object = "index.html"
 
   viewer_certificate {
     acm_certificate_arn      = aws_acm_certificate_validation.portfolio.certificate_arn
