@@ -19,7 +19,7 @@ function handler(event) {
 
   var olduri = request.uri;
 
-  if (olduri.includes('.') && olduri.match(/^(?!.*\/$).*$/)) {
+  if (!olduri.includes('.') && olduri.match(/^(?!.*\/$).*$/)) {
     newuri = olduri + '/';
     var res = {
       statusCode: 302,
