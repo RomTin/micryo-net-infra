@@ -56,7 +56,7 @@ resource "aws_iam_role_policy" "cd_role_policy" {
 }
 
 resource "aws_iam_role" "lambda_edge_role" {
-  name = local.cd_role_name
+  name = local.lambda_edge_role_name
   assume_role_policy = jsonencode({
     Version = "2012-10-17"
     Statement = [{
@@ -71,7 +71,7 @@ resource "aws_iam_role" "lambda_edge_role" {
     }]
   })
   tags = {
-    Name = local.cd_role_name
+    Name = local.lambda_edge_role_name
   }
 }
 
