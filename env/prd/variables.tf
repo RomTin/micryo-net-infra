@@ -1,10 +1,11 @@
 # variables.tf
 
 locals {
-  env             = "prd"
-  log_bucket_name = "log-bucket-micryo-net"
-  athena_id       = "logs_micryo_net"
-  cd_role_name    = "codebuild-cd-role-micryo-net"
+  env                   = "prd"
+  log_bucket_name       = "log-bucket-micryo-net"
+  athena_id             = "logs_micryo_net"
+  cd_role_name          = "codebuild-cd-role-micryo-net"
+  lambda_edge_role_name = "lambda-edge-role-micryo-net"
 }
 
 variable "env_root_domain" {
