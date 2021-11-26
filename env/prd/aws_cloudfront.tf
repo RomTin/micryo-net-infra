@@ -14,5 +14,5 @@ module "portfolio" {
   log_bucket_id          = data.aws_s3_bucket.log.id
   athena_id              = local.athena_id
   basic_auth_password    = var.basic_auth_password
-  lambda_edge_role       = data.aws_iam_role.lambda_edge_role
+  lambda_edge_role       = data.aws_iam_role.lambda_edge_role.arn
 }
