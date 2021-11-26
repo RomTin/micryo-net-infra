@@ -11,7 +11,3 @@ data "aws_s3_bucket" "log" {
 data "aws_iam_role" "cd_role" {
   name = local.cd_role_name
 }
-
-data "aws_iam_role" "lambda_edge_role" {
-  name = local.lambda_edge_role_name
-}

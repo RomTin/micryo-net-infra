@@ -53,11 +53,6 @@ resource "aws_cloudfront_distribution" "portfolio" {
       }
     }
 
-    lambda_function_association {
-      event_type = "viewer-request"
-      lambda_arn = aws_lambda_function.index_completion.arn
-    }
-
     forwarded_values {
       query_string = true
       cookies {

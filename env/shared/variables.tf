@@ -6,5 +6,4 @@ locals {
   athena_bucket_name    = "athena-data-bucket-micryo-net"
   log_bucket_name       = "log-bucket-micryo-net"
   cd_role_name          = "codebuild-cd-role-micryo-net"
-  lambda_edge_role_name = "lambda-edge-role-micryo-net"
 }
