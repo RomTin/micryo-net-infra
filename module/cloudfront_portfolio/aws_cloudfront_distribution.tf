@@ -45,12 +45,9 @@ resource "aws_cloudfront_distribution" "portfolio" {
     default_ttl            = 3600
     max_ttl                = 3600
 
-    dynamic "function_association" {
-      for_each = length(var.basic_auth_password) > 0 ? [0] : []
-      content {
-        event_type   = "viewer-request"
-        function_arn = aws_cloudfront_function.auth[0].arn
-      }
+    function_association {
+      event_type   = "viewer-request"
+      function_arn = aws_cloudfront_function.auth.arn
     }
 
     forwarded_values {
