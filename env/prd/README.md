@@ -36,7 +36,7 @@
 | <a name="input_AWS_SECRET_ACCESS_KEY"></a> [AWS\_SECRET\_ACCESS\_KEY](#input\_AWS\_SECRET\_ACCESS\_KEY) | Terraform実行用IAMユーザーのシークレットアクセスキー | `string` | n/a | yes |
 | <a name="input_GITHUB_TOKEN"></a> [GITHUB\_TOKEN](#input\_GITHUB\_TOKEN) | GitHub用パーソナルアクセストークン | `string` | n/a | yes |
 | <a name="input_NOTIFICATION_EMAIL"></a> [NOTIFICATION\_EMAIL](#input\_NOTIFICATION\_EMAIL) | 各種アラートの通知先に使用するEメールアドレス | `string` | n/a | yes |
-| <a name="input_basic_auth_password"></a> [basic\_auth\_password](#input\_basic\_auth\_password) | ベーシック認証に使用するパスワード, 空文字列の場合ベーシック認証を無効化する | `string` | `""` | no |
+| <a name="input_basic_auth_password"></a> [basic\_auth\_password](#input\_basic\_auth\_password) | ベーシック認証に使用するパスワード | `string` | `""` | no |
 | <a name="input_env_root_domain"></a> [env\_root\_domain](#input\_env\_root\_domain) | 環境で使用するドメイン | `string` | n/a | yes |
 
 ## Outputs
