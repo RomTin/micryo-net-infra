@@ -28,6 +28,19 @@ resource "aws_cloudfront_distribution" "portfolio" {
     include_cookies = true
   }
 
+  dynamic "custom_error_response" {
+    for_each = [
+      403,
+      404
+    ]
+    content {
+      error_caching_min_ttl = 10
+      error_code            = custom_error_response.value
+      response_code         = 404
+      response_page_path    = "/blog/404/"
+    }
+  }
+
   origin {
     domain_name = aws_s3_bucket.portfolio.bucket_regional_domain_name
     origin_id   = aws_s3_bucket.portfolio.bucket_regional_domain_name
