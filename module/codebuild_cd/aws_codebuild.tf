@@ -8,7 +8,7 @@ resource "aws_codebuild_project" "cd" {
   }
   environment {
     compute_type = var.compute_type
-    image        = "aws/codebuild/amazonlinux2-x86_64-standard:3.0"
+    image        = "aws/codebuild/standard:5.0-21.10.15"
     type         = "LINUX_CONTAINER"
 
     dynamic "environment_variable" {
