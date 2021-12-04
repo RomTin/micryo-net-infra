@@ -18,19 +18,14 @@ function handler(event) {
   }
 
   var olduri = request.uri;
+  var newuri;
 
   if (!olduri.includes('.') && olduri.match(/^(?!.*\/$).*$/)) {
     newuri = olduri + '/';
-    var res = {
-      statusCode: 302,
-      statusDescription: 'Found',
-      headers: { "location": { "value": newuri } }
-    }
-    return res
   }
 
   // URIの末尾が'/'で終わっている場合にURIをindex.htmlで終わるように上書きする
-  var newuri = olduri.replace(/\/$/, '\/index.html');
+  newuri = olduri.replace(/\/$/, '\/index.html');
   request.uri = newuri;
 
   return request;
