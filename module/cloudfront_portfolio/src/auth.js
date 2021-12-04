@@ -18,14 +18,15 @@ function handler(event) {
   }
 
   var olduri = request.uri;
-  var newuri;
+  var newuri = olduri;
 
+  // URIが拡張子を含まず、'/'で終わっていない場合に'/'を付与する
   if (!olduri.includes('.') && olduri.match(/^(?!.*\/$).*$/)) {
-    newuri = olduri + '/';
+    newuri = newuri + '/';
   }
 
   // URIの末尾が'/'で終わっている場合にURIをindex.htmlで終わるように上書きする
-  newuri = olduri.replace(/\/$/, '\/index.html');
+  newuri = newuri.replace(/\/$/, '\/index.html');
   request.uri = newuri;
 
   return request;
