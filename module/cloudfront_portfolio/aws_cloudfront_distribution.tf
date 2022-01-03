@@ -57,6 +57,7 @@ resource "aws_cloudfront_distribution" "portfolio" {
     min_ttl                = 3600
     default_ttl            = 3600
     max_ttl                = 3600
+    compress               = true
 
     function_association {
       event_type   = "viewer-request"
